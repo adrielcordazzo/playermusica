@@ -105,6 +105,7 @@ public class FormAvaliacao extends javax.swing.JFrame {
                     .addComponent(jRadioButton5)))
         );
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_save.png"))); // NOI18N
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +113,7 @@ public class FormAvaliacao extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_sair.png"))); // NOI18N
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
