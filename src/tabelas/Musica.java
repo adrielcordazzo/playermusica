@@ -21,6 +21,11 @@ public class Musica {
         this.bd.executeInsert(sql);
     }
     
+    public void excluirMusica(String nome) throws SQLException{
+        String sql = "DELETE FROM musica WHERE nome = '" + nome + "'";
+        this.bd.executeInsert(sql);
+    }
+    
     public void editAvaliacao(String nome, String avaliacao) throws SQLException{
         String sql = "UPDATE musica SET  avaliacao = '" + avaliacao + "' WHERE nome = '" + nome + "'";
         this.bd.executeInsert(sql);
