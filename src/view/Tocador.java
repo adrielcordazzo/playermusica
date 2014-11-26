@@ -2,12 +2,10 @@ package view;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import static java.lang.System.in;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
-public class Tocador extends Thread{
-
+public class Tocador{
         public void tocar (final String musica){
             try {
                 //executa o som
@@ -24,4 +22,5 @@ public class Tocador extends Thread{
                 e.printStackTrace();
             }
         }
+
 }
