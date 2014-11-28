@@ -5,11 +5,20 @@ import java.io.FileNotFoundException;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
-public class Tocador{
+public class Tocador extends Thread{
     private FileInputStream in;
     private Player p;
+    private String musica;
     
-    public void tocar (final String musica){
+     public Tocador(String musica){
+        this.musica = musica;
+    }
+        
+    public void run(){
+        tocar();
+    }
+    
+    public void tocar (){
         try {
             //executa o som
 
@@ -18,15 +27,12 @@ public class Tocador{
 
             //Cria uma instancia da classe player passando para ele o InpuStream do arquivo
             this.p = new Player(in);
-            new Thread(){
-                public void run(){
-                  try {
-                    p.play();
-                  }catch (Exception e) {
-                    System.out.println(e);
-                  }
-                }
-            }.start();
+            
+            try {
+                p.play();
+            }catch (Exception e) {
+                System.out.println(e);
+            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -36,7 +42,11 @@ public class Tocador{
     }
     
     public void parar() throws JavaLayerException{
-        this.p.close();
+        try {
+            p.play();
+        }catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 }

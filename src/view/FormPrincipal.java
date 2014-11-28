@@ -13,6 +13,7 @@ import tabelas.Musica;
 public class FormPrincipal extends javax.swing.JFrame {
 
     Musica musica;
+    Thread t;
     
     public FormPrincipal() {
         initComponents();
@@ -286,8 +287,8 @@ public class FormPrincipal extends javax.swing.JFrame {
             jLabel3.setText((String) jTable1.getValueAt(selectedRow,0));
             jLabel6.setText((String) jTable1.getValueAt(selectedRow,1));
             jLabel7.setText((String) jTable1.getValueAt(selectedRow,2));
-            Tocador t = new Tocador();
-            t.tocar(musica);
+            this.t = new Tocador(musica);
+            this.t.start();
             
         }else{
             JOptionPane.showMessageDialog(null, "Selecione uma música!");
@@ -363,18 +364,11 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Tocador t = new Tocador();
-        try {
-            t.parar();
-        } catch (JavaLayerException ex) {
-            Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+         this.t.suspend();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
