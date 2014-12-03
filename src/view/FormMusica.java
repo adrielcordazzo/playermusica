@@ -83,6 +83,7 @@ public class FormMusica extends javax.swing.JFrame {
                 }
             } 
         }
+        jTextField1.setEditable(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -307,13 +308,13 @@ public class FormMusica extends javax.swing.JFrame {
                 avaliacao = button.getText();
             }
         }
-        if(i > 0){
+        if(i > 0){ System.out.println("edita musica");
             try {
                 this.musica.editMusica(nome_artista, nome_album, nome_musica, nome_diretorio, avaliacao);
             } catch (SQLException ex) {
                 Logger.getLogger(FormMusica.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else{
+        }else{System.out.println("adiciona musica");
             try {
                this.musica.addMusica(nome_artista, nome_album, nome_musica, nome_diretorio, avaliacao);
             } catch (SQLException ex) {

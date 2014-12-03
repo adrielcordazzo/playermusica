@@ -350,11 +350,12 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         int selectedRow = jTable1.getSelectedRow();
         if(selectedRow != -1){
-            String mus = (String) jTable1.getValueAt(selectedRow,0);
+            String musica = (String) jTable1.getValueAt(selectedRow,0);
             try {
-               this.musica.excluirMusica(mus);
-               FormPrincipal p = new FormPrincipal();
-               p.listarMusicas();
+               FormExcluir e =  new FormExcluir();
+               e.setarMusica(musica);
+               e.setVisible(true);
+               this.setVisible(false);
             } catch (SQLException ex) {
                 Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -369,6 +370,10 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
          this.t.suspend();
+         
+         jLabel3.setText("Nenhuma");
+         jLabel6.setText("Nenhum");
+         jLabel7.setText("Nenhum");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
