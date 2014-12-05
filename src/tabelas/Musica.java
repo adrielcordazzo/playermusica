@@ -31,8 +31,13 @@ public class Musica {
         this.bd.executeInsert(sql);
     }
     
-     public ResultSet selectAll() throws SQLException{
-        return this.bd.executeSql("SELECT m.*, a.nome AS artista, ab.nome AS album FROM musica m LEFT JOIN artista a ON a.id = m.id_artista LEFT JOIN album ab ON ab.id = m.id_album ORDER BY m.avaliacao DESC");
+     public ResultSet selectAll(String busca) throws SQLException{
+        String sql = "SELECT m.*, a.nome AS artista, ab.nome AS album FROM musica m LEFT JOIN artista a ON a.id = m.id_artista LEFT JOIN album ab ON ab.id = m.id_album ";
+        if(!(busca.isEmpty())){
+            sql += " WHERE m.nome LIKE '%" + busca + "%' OR a.nome LIKE '%" + busca + "%' OR ab.nome LIKE '%" + busca + "%' ";
+        }
+        sql += " ORDER BY m.avaliacao DESC";
+        return this.bd.executeSql(sql);
     }
      
      public ResultSet selectByName(String musica) throws SQLException{

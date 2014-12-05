@@ -57,7 +57,7 @@ public class FormPrincipalTest {
     public void testListarMusicas() throws Exception {
         System.out.println("listarMusicas");
         FormPrincipal instance = new FormPrincipal();
-        instance.listarMusicas();
+        instance.listarMusicas("");
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

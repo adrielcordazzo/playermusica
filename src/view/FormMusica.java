@@ -324,7 +324,7 @@ public class FormMusica extends javax.swing.JFrame {
         FormPrincipal p = new FormPrincipal();
         p.setVisible(true);
         try {
-            p.listarMusicas();
+            p.listarMusicas("");
         } catch (SQLException ex) {
             Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -335,7 +335,7 @@ public class FormMusica extends javax.swing.JFrame {
         FormPrincipal p = new FormPrincipal();
         p.setVisible(true);
         try {
-            p.listarMusicas();
+            p.listarMusicas("");
         } catch (SQLException ex) {
             Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
