@@ -416,14 +416,10 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         String busca = jTextField1.getText();
-        if(busca.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Informe o nome de um Artista ou Música!");
-        }else{
-            try {
-                this.listarMusicas(busca);
-            } catch (SQLException ex) {
-                Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            this.listarMusicas(busca);
+        } catch (SQLException ex) {
+            Logger.getLogger(FormPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
