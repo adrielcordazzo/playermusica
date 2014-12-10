@@ -6,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javazoom.jl.decoder.JavaLayerException;
 import tabelas.Musica;
 
 
